@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Klinik Kenanga
+title: Klinik Merdeka
 subtitle1: Trusted Medical Clinic in Melaka
 subtitle2: Comprehensive healthcare services in a caring and professional environment.
 brandingSrc: /assets/images/branding.png
