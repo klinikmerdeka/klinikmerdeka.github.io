@@ -1,12 +1,12 @@
 # Site Settings
 lang: en
-title: Klinik Kenanga
+title: Klinik Merdeka
 tagline: Healthcare you deserve
-email: general.kenanga@gmail.com
+email: general.Merdeka@gmail.com
 description: >
-  Klinik Kenanga official website.
+  Klinik Merdeka official website.
 baseurl: "/"
-url: "https://kenanga.clinic"
+url: "https://merdeka.clinic"
 permalink: pretty
 #favicon: /path/to/favicon.png
 #hide_share_buttons: true
