@@ -7,6 +7,21 @@ items:
   - title: PMCare
     icon: pmcare
 
+  - title: HealthConnect
+    icon: hc
+
+  - title: AIA
+    icon: aia
+
+  - title: RedAlert
+    icon: redalert
+
+  - title: WeCare
+    icon: wecare
+  
+  - title: MPHTJ
+    icon: mphtj
+
   - title: Mednefits
     icon: mednefits
 
@@ -14,6 +29,9 @@ items:
     icon: ihp
   
   - title: IA
+    icon: ia
+  
+  - title: Compumed
     icon: ia
 
   - title: SEHATI
