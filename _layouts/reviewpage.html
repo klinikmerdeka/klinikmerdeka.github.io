@@ -147,16 +147,17 @@ function handleStarClick(value) {
     if (value == 5) {
         console.log("5 stars selected, redirecting to Google Reviews.");
         // Redirect to Google Review page if 5 stars are selected
-        window.location.href = 'https://g.page/r/CXPndanXZkjdEBM/review';
+        window.location.href = 'https://g.page/r/CaGE_wQwDK7aEAE/review';
     } else if (value < 5) {
         console.log("Less than 4 stars selected, showing Google Form in iframe.");
         // Open Google Form in iframe for less than 4 stars
-        iframe.src = 'https://docs.google.com/forms/d/e/1FAIpQLSck8sq-d_Gl3qz2h4SMg0yWWlh4u840fDtXYlFdXSPOWCJnmQ/viewform?embedded=true';
+        iframe.src = 'https://docs.google.com/forms/d/e/1FAIpQLSdb3QkE-toE7iD3C7SE1UpVfaviFqMPi1xEkpN2_mOrCMDwCA/viewform?embedded=true';
         iframe.style.display = 'block';
         feedbackMessage.textContent = "We appreciate your feedback! Please let us know how we can improve.";
         feedbackMessage.classList.remove('is-hidden');
     } 
 }
+
 
 // Reset everything on page load or reload
 window.onload = function () {
