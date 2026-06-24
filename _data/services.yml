@@ -1,10 +1,9 @@
 style: is-light
 height: is-medium
 items:
-  - title: General Consultation
+  - title: General Practice Clinic
     icon: fa-stethoscope
     description: >
-      Klinik Merdeka is the primary point of contact for patients
-      seeking general healthcare services. 
+      Klinik Merdeka is a Medical Clinic
 
  

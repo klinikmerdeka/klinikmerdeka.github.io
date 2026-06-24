@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Klinik Merdeka
-subtitle1: Trusted Medical Clinic in Melaka
-subtitle2: Comprehensive healthcare services in a caring and professional environment.
+subtitle1: General Practice Clinic in Melaka
+subtitle2: Caring and professional environment.
 brandingSrc: /assets/images/branding.png
-brandingAlt: Klinik Kenanga
+brandingAlt: Klinik Merdeka
 brandingSize: image is-16by9
 hero_height: is-medium
 hero_image: /assets/images/hero.jpeg
