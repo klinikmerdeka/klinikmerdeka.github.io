@@ -3,6 +3,10 @@
 source "https://rubygems.org"
 gemspec
 
+gem "bigdecimal"
+gem "logger"
+gem "webrick"
+
 group :jekyll_plugins do
     gem "jekyll-feed", "~> 0.6"
     gem "jekyll-sitemap"
@@ -10,4 +14,5 @@ group :jekyll_plugins do
     gem "jekyll-seo-tag"
     gem 'jekyll-redirect-from'
 end
+
 

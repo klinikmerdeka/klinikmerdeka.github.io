@@ -18,55 +18,109 @@
 >
     {% include head.html %}
     <body>
-        {% if site.cookie_policy %}
-            {% include cookie-banner.html %}
-        {% endif %}
-        {% include header.html %}
-        <div>
-        {% unless page.hide_hero %}
-            {% include hero.html %}
-        {% endunless %}
+        {% if site.under_construction %}
+            <section class="hero is-fullheight" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <div class="box p-6" style="background: rgba(255, 255, 255, 0.98); max-width: 650px; margin: 0 auto; border-radius: 16px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);">
+                            <figure class="image mb-5" style="max-width: 260px; margin: 0 auto;">
+                                <img src="{{ site.baseurl }}/assets/images/branding.png" alt="Klinik Merdeka">
+                            </figure>
+                            
+                            <h1 class="title is-3 has-text-grey-darker mb-3">We'll Be Back Soon!</h1>
+                            <p class="subtitle is-6 has-text-grey mb-5">Our website is currently undergoing scheduled maintenance and upgrades to improve your experience. We apologize for the inconvenience.</p>
+                            
+                            <hr style="background-color: #f5f5f5; height: 1px; margin: 1.5rem 0;">
+                            
+                            <h3 class="title is-5 has-text-grey-darker mb-4">Need Medical Assistance?</h3>
+                            <p class="subtitle is-6 has-text-grey mb-4">Please contact us directly through the channels below:</p>
+                            
+                            <div class="buttons is-centered mb-5">
+                                <a href="tel:+6063175340" class="button is-info is-medium" style="border-radius: 8px;">
+                                    <span class="icon"><i class="fas fa-phone"></i></span>
+                                    <span>Call +606 317 5340</span>
+                                </a>
+                                <a href="https://api.whatsapp.com/send/?phone=60108894880&text=Hi%20Klinik%20Merdeka" target="_blank" rel="noopener noreferrer" class="button is-success is-medium" style="border-radius: 8px;">
+                                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                                    <span>WhatsApp Us</span>
+                                </a>
+                            </div>
 
-        {% include services.html %}
-        {% include panel.html %}
-
-
-        <section class="section is-medium" id="home">
-            <div class="container">
-                <div class="columns is-multiline">
-                    {% if page.menubar_toc %}
-                        <div class="column is-4-desktop is-4-tablet">
-                            {% assign contentsTitle = page.toc_title | default: 'Contents' %}
-                            {% include toc.html html=content class='menu-list' h_min=2 h_max=3 contents_title=contentsTitle %}
+                            <div class="columns is-mobile is-centered mb-5">
+                                <div class="column is-narrow">
+                                    <a href="mailto:admin@merdeka.clinic" class="has-text-grey-darker mx-3">
+                                        <span class="icon"><i class="fas fa-envelope"></i></span> <span>admin@merdeka.clinic</span>
+                                    </a>
+                                </div>
+                                <div class="column is-narrow">
+                                    <a href="https://www.facebook.com/klinik.mer" target="_blank" rel="noopener noreferrer" class="has-text-grey-darker mx-3">
+                                        <span class="icon"><i class="fab fa-facebook"></i></span> <span>Facebook</span>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="has-text-left mt-5 p-4" style="background-color: #fafafa; border-radius: 8px; border: 1px solid #eaeaea;">
+                                <p class="mb-2">
+                                    <span class="icon has-text-link"><i class="fas fa-map-marker-alt"></i></span>
+                                    <strong>Address:</strong><br>
+                                    <span class="is-size-6" style="padding-left: 24px; display: inline-block;">No 45, Jalan MJ32, Taman Merdeka Jaya,<br>75350 Batu Berendam, Melaka, Malaysia</span>
+                                </p>
+                            </div>
                         </div>
-                    {% elsif page.menubar %}
-                        <div class="column is-4-desktop is-4-tablet">
-                            {% include menubar.html %}
-                        </div>
-                    {% endif %}
-                    <div class="column {{ content_width }}">
-                        {% include tabs.html %}
-                        {% include showcase.html %}
-                        {% include sponsors.html %}
-                        {% include gallery.html %}
-                        {{ content }}
                     </div>
-                    {% if site.posts and page.show_sidebar %}
-                        <div class="column is-4-desktop is-4-tablet">
-                            {% include latest-posts.html %}
-                        </div>
-                    {% endif %}
                 </div>
-            </div>
-        </section>
-        {% include contactus.html %}
-        {% include greview.html %}
+            </section>
+        {% else %}
+            {% if site.cookie_policy %}
+                {% include cookie-banner.html %}
+            {% endif %}
+            {% include header.html %}
+            <div>
+            {% unless page.hide_hero %}
+                {% include hero.html %}
+            {% endunless %}
 
-        {% unless page.hide_footer %}
-            {% include footer.html %}
-        {% endunless %}
-        <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
-        {%- include footer-scripts.html -%}
-        </div>
+            {% include services.html %}
+            {% include panel.html %}
+
+
+            <section class="section is-medium" id="home">
+                <div class="container">
+                    <div class="columns is-multiline">
+                        {% if page.menubar_toc %}
+                            <div class="column is-4-desktop is-4-tablet">
+                                {% assign contentsTitle = page.toc_title | default: 'Contents' %}
+                                {% include toc.html html=content class='menu-list' h_min=2 h_max=3 contents_title=contentsTitle %}
+                            </div>
+                        {% elsif page.menubar %}
+                            <div class="column is-4-desktop is-4-tablet">
+                                {% include menubar.html %}
+                            </div>
+                        {% endif %}
+                        <div class="column {{ content_width }}">
+                            {% include tabs.html %}
+                            {% include showcase.html %}
+                            {% include sponsors.html %}
+                            {% include gallery.html %}
+                            {{ content }}
+                        </div>
+                        {% if site.posts and page.show_sidebar %}
+                            <div class="column is-4-desktop is-4-tablet">
+                                {% include latest-posts.html %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+            {% include contactus.html %}
+            {% include greview.html %}
+
+            {% unless page.hide_footer %}
+                {% include footer.html %}
+            {% endunless %}
+            <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
+            {%- include footer-scripts.html -%}
+            </div>
+        {% endif %}
     </body>
 </html>

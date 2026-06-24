@@ -6,100 +6,154 @@
 >
     {% include head.html %}
     <body>
-        {% if site.cookie_policy %}
-            {% include cookie-banner.html %}
-        {% endif %}
-        {% include header.html %}
-        <section class="hero hero-banner is-primary">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-centered">
-                        <div class="column is-6-tablet is-6-desktop">
-                            <h1 class="title is-1">{{ page.title }}</h1>
-                            {% if page.subtitle %}
-                                <p class="subtitle is-1">{{ page.subtitle }}</p>
-                            {% endif %}
-
-                            <div class="card mt-6">
-                                <div class="card-content">
-                                    <div class="content">
-                                        {{ page.snippet | markdownify }}
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    {% if page.hero_link %}
-                                        <div class="card-footer-item">
-                                            <a href="{{ page.hero_link }}" class="button is-large is-primary">
-                                                {{- page.hero_link_text -}}
-                                            </a>
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-6-desktop is-relative">
-                            <figure class="image {{ page.hero_image_ratio | default: 'is-4by3' }}">
-                                <img src="{{ page.hero_image }}" alt="{{ page.hero_image_alt }}">
+        {% if site.under_construction %}
+            <section class="hero is-fullheight" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <div class="box p-6" style="background: rgba(255, 255, 255, 0.98); max-width: 650px; margin: 0 auto; border-radius: 16px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);">
+                            <figure class="image mb-5" style="max-width: 260px; margin: 0 auto;">
+                                <img src="{{ site.baseurl }}/assets/images/branding.png" alt="Klinik Merdeka">
                             </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {% if site.data.reviews[page.product_code] %}
-            <section class="section mt-6">
-                <div class="container">
-                    <div class="columns is-centered is-multiline">
-                        <div class="column is-full">
-                            <h2 class="title is-3 mb-3 has-text-centered">Reviews</h2>
-                        </div>
-                        {% for review in site.data.reviews[page.product_code] %}
-                            <div class="column is-4-desktop is-6-tablet">
-                                <div class="card">
-                                    <div class="card-content">
-                                        {% include review.html %}
-                                    </div>
+                            
+                            <h1 class="title is-3 has-text-grey-darker mb-3">We'll Be Back Soon!</h1>
+                            <p class="subtitle is-6 has-text-grey mb-5">Our website is currently undergoing scheduled maintenance and upgrades to improve your experience. We apologize for the inconvenience.</p>
+                            
+                            <hr style="background-color: #f5f5f5; height: 1px; margin: 1.5rem 0;">
+                            
+                            <h3 class="title is-5 has-text-grey-darker mb-4">Need Medical Assistance?</h3>
+                            <p class="subtitle is-6 has-text-grey mb-4">Please contact us directly through the channels below:</p>
+                            
+                            <div class="buttons is-centered mb-5">
+                                <a href="tel:+6063175340" class="button is-info is-medium" style="border-radius: 8px;">
+                                    <span class="icon"><i class="fas fa-phone"></i></span>
+                                    <span>Call +606 317 5340</span>
+                                </a>
+                                <a href="https://api.whatsapp.com/send/?phone=60108894880&text=Hi%20Klinik%20Merdeka" target="_blank" rel="noopener noreferrer" class="button is-success is-medium" style="border-radius: 8px;">
+                                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                                    <span>WhatsApp Us</span>
+                                </a>
+                            </div>
+
+                            <div class="columns is-mobile is-centered mb-5">
+                                <div class="column is-narrow">
+                                    <a href="mailto:admin@merdeka.clinic" class="has-text-grey-darker mx-3">
+                                        <span class="icon"><i class="fas fa-envelope"></i></span> <span>admin@merdeka.clinic</span>
+                                    </a>
+                                </div>
+                                <div class="column is-narrow">
+                                    <a href="https://www.facebook.com/klinik.mer" target="_blank" rel="noopener noreferrer" class="has-text-grey-darker mx-3">
+                                        <span class="icon"><i class="fab fa-facebook"></i></span> <span>Facebook</span>
+                                    </a>
                                 </div>
                             </div>
-                        {% endfor %}
+                            
+                            <div class="has-text-left mt-5 p-4" style="background-color: #fafafa; border-radius: 8px; border: 1px solid #eaeaea;">
+                                <p class="mb-2">
+                                    <span class="icon has-text-link"><i class="fas fa-map-marker-alt"></i></span>
+                                    <strong>Address:</strong><br>
+                                    <span class="is-size-6" style="padding-left: 24px; display: inline-block;">No 45, Jalan MJ32, Taman Merdeka Jaya,<br>75350 Batu Berendam, Melaka, Malaysia</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-        {% endif %}
-        <section class="hero is-light mt-6">
-            <div class="hero-body">
+        {% else %}
+            {% if site.cookie_policy %}
+                {% include cookie-banner.html %}
+            {% endif %}
+            {% include header.html %}
+            <section class="hero hero-banner is-primary">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-6-tablet is-6-desktop">
+                                <h1 class="title is-1">{{ page.title }}</h1>
+                                {% if page.subtitle %}
+                                    <p class="subtitle is-1">{{ page.subtitle }}</p>
+                                {% endif %}
+
+                                <div class="card mt-6">
+                                    <div class="card-content">
+                                        <div class="content">
+                                            {{ page.snippet | markdownify }}
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        {% if page.hero_link %}
+                                            <div class="card-footer-item">
+                                                <a href="{{ page.hero_link }}" class="button is-large is-primary">
+                                                    {{- page.hero_link_text -}}
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6-tablet is-6-desktop is-relative">
+                                <figure class="image {{ page.hero_image_ratio | default: 'is-4by3' }}">
+                                    <img src="{{ page.hero_image }}" alt="{{ page.hero_image_alt }}">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% if site.data.reviews[page.product_code] %}
+                <section class="section mt-6">
+                    <div class="container">
+                        <div class="columns is-centered is-multiline">
+                            <div class="column is-full">
+                                <h2 class="title is-3 mb-3 has-text-centered">Reviews</h2>
+                            </div>
+                            {% for review in site.data.reviews[page.product_code] %}
+                                <div class="column is-4-desktop is-6-tablet">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            {% include review.html %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            {% endif %}
+            <section class="hero is-light mt-6">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-6">
+                                {% include newsletter.html %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section my-6">
                 <div class="container">
-                    <div class="columns is-centered">
-                        <div class="column is-6">
-                            {% include newsletter.html %}
+                    <div class="columns is-multiline is-centered">
+                        <div class="column is-full">
+                            <h2 class="title is-3 mb-3 has-text-centered">{{ page.about_title }}</h2>
+                        </div>
+                        <div class="column is-4-tablet is-3-desktop">
+                            <figure class="image is-square">
+                                <img class="is-rounded" src="{{ page.about_image }}" alt="{{ page.about_image_alt }}">
+                            </figure>
+                        </div>
+                        <div class="column is-8-tablet is-6-desktop">
+                            <div class="content">
+                                {{ content }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="section my-6">
-            <div class="container">
-                <div class="columns is-multiline is-centered">
-                    <div class="column is-full">
-                        <h2 class="title is-3 mb-3 has-text-centered">{{ page.about_title }}</h2>
-                    </div>
-                    <div class="column is-4-tablet is-3-desktop">
-                        <figure class="image is-square">
-                            <img class="is-rounded" src="{{ page.about_image }}" alt="{{ page.about_image_alt }}">
-                        </figure>
-                    </div>
-                    <div class="column is-8-tablet is-6-desktop">
-                        <div class="content">
-                            {{ content }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {% unless page.hide_footer %}
-            {% include footer.html %}
-        {% endunless %}
-        <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
-        {%- include footer-scripts.html -%}
+            </section>
+            {% unless page.hide_footer %}
+                {% include footer.html %}
+            {% endunless %}
+            <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
+            {%- include footer-scripts.html -%}
+        {% endif %}
     </body>
 </html>
